@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import{HomeComponent} from './home/home.component';
 import {AboutusComponent} from './aboutus/aboutus.component';
 import {PageNoFoundComponent} from './page-no-found/page-no-found.component';
+import { AdminDashboardLayoutComponent } from './admin/Shared/admin-dashboard-layout/admin-dashboard-layout.component';
 
 const routes: Routes = [
   {
@@ -13,6 +14,12 @@ const routes: Routes = [
   {
     component:AboutusComponent,
     path:"about"
+  },
+  {  
+  path:"admin",
+  
+  loadChildren:()=>import('./admin/admin.module').
+  then(mod=>mod.AdminModule)
   },
   {
     component:PageNoFoundComponent,
