@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import {SharedModule} from './shared/shared.module';
+import {MDBBootstrapModule} from 'angular-bootstrap-md';
 import { AppRoutingModule } from './app-routing.module';
+import {AdminModule} from './admin/admin.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
@@ -12,9 +12,7 @@ import { PageNoFoundComponent } from './page-no-found/page-no-found.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HeaderComponent,
-    FooterComponent,
+    AppComponent,    
     HomeComponent,
     AboutusComponent,
     ContactUsComponent,
@@ -22,7 +20,10 @@ import { PageNoFoundComponent } from './page-no-found/page-no-found.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SharedModule,
+    AdminModule,
+    MDBBootstrapModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
