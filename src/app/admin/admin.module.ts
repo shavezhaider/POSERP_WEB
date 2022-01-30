@@ -20,6 +20,6 @@ import { AdminDashboardLayoutComponent } from './Shared/admin-dashboard-layout/a
     AdminRoutingModule,
     MDBBootstrapModule.forRoot()
   ],
-  exports:[AdminLoginComponent]
+  exports:[AdminLoginComponent,AdminDashboardLayoutComponent,AdminHeaderComponent]
 })
 export class AdminModule { }

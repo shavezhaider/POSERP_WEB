@@ -3,27 +3,38 @@ import { RouterModule, Routes } from '@angular/router';
 import{HomeComponent} from './home/home.component';
 import {AboutusComponent} from './aboutus/aboutus.component';
 import {PageNoFoundComponent} from './page-no-found/page-no-found.component';
-import { AdminDashboardLayoutComponent } from './admin/Shared/admin-dashboard-layout/admin-dashboard-layout.component';
+
+import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { FrontLayoutComponent } from './layouts/admin-layout/front-layout/front-layout.component';
 
 const routes: Routes = [
+  {  
+    path:"admin",
+    component:AdminLayoutComponent,            
+    loadChildren:()=>import('./admin/admin.module').
+    then(mod=>mod.AdminModule)
+    
+
+    },
   {
-    component:HomeComponent,
-    path:""
+    
+    path:"",
+    component:FrontLayoutComponent,
+    children:[{path:"",component:HomeComponent}]
   },
  
   {
-    component:AboutusComponent,
-    path:"about"
+    
+    path:"about",
+    component:FrontLayoutComponent,
+    children:[{path:"",component:AboutusComponent}]
   },
-  {  
-  path:"admin",
-  
-  loadChildren:()=>import('./admin/admin.module').
-  then(mod=>mod.AdminModule)
-  },
+ 
   {
-    component:PageNoFoundComponent,
-    path:"**"
+    
+    path:"**",
+    component:FrontLayoutComponent,
+    children:[{path:"",component:PageNoFoundComponent}]
 
   }
 ];
