@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { PageNoFoundComponent } from '../page-no-found/page-no-found.component';
 
 import {AdminLoginComponent} from './admin-login/admin-login.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
@@ -7,10 +8,8 @@ import {AdminDashboardLayoutComponent} from './Shared/admin-dashboard-layout/adm
 
 const routes: Routes = [
  {path:'',component:AdminLoginComponent},
- {
-path:'',component:AdminDashboardLayoutComponent,
-children:[{path:'dashboard',component:DashboardComponent}]
-}
+ {path:'dashboard',component:DashboardComponent},
+ {path:"**",component: PageNoFoundComponent}
 ];
 
 @NgModule({

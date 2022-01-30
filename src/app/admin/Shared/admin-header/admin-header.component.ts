@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild,ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-admin-header',
@@ -6,8 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin-header.component.css']
 })
 export class AdminHeaderComponent implements OnInit {
+  //@ViewChild('sidenav', {static: true}) sidenav: ElementRef;
+ // clicked: boolean;
 
-  constructor() { }
+  constructor() {
+    //this.clicked = this.clicked === undefined ? false : true;
+  }
+
 
   ngOnInit(): void {
   }
