@@ -6,22 +6,30 @@ import {PageNoFoundComponent} from './page-no-found/page-no-found.component';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { FrontLayoutComponent } from './layouts/admin-layout/front-layout/front-layout.component';
+import { AdminLoginComponent } from './authentication/admin-login/admin-login.component';
 
 const routes: Routes = [
   {  
     path:"admin",
     component:AdminLayoutComponent,            
     loadChildren:()=>import('./admin/admin.module').
-    then(mod=>mod.AdminModule)
-    
-
+    then(mod=>mod.AdminModule)  
     },
+    
+    {  
+      path:"adminlogin",      
+      loadChildren:()=>import('./authentication/authentication.module').
+      then(mod=>mod.AuthenticationModule)  
+  
+      },
   {
     
     path:"",
     component:FrontLayoutComponent,
     children:[{path:"",component:HomeComponent}]
   },
+  
+  
  
   {
     
