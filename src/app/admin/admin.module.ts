@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AdminLoginComponent } from './admin-login/admin-login.component';
 import {AdminRoutingModule} from './admin-routing.module'
 import {MDBBootstrapModule} from 'angular-bootstrap-md';
 
@@ -12,7 +11,7 @@ import { AdminDashboardLayoutComponent } from './Shared/admin-dashboard-layout/a
 
 @NgModule({
   declarations: [    
-    AdminLoginComponent,  DashboardComponent, AdminHeaderComponent, AdminFooterComponent, AdminDashboardLayoutComponent
+     DashboardComponent, AdminHeaderComponent, AdminFooterComponent, AdminDashboardLayoutComponent
   
   ],
   imports: [
@@ -20,6 +19,6 @@ import { AdminDashboardLayoutComponent } from './Shared/admin-dashboard-layout/a
     AdminRoutingModule,
     MDBBootstrapModule.forRoot()
   ],
-  exports:[AdminLoginComponent,AdminDashboardLayoutComponent,AdminHeaderComponent]
+  exports:[AdminDashboardLayoutComponent,AdminHeaderComponent]
 })
 export class AdminModule { }

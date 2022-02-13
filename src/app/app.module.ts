@@ -12,6 +12,7 @@ import { PageNoFoundComponent } from './page-no-found/page-no-found.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { AdminModule } from './admin/admin.module';
 import { FrontLayoutComponent } from './layouts/admin-layout/front-layout/front-layout.component';
+import { AuthenticationModule } from './authentication/authentication.module';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { FrontLayoutComponent } from './layouts/admin-layout/front-layout/front-
     AppRoutingModule,
     SharedModule,
     AdminModule,
-    
+    AuthenticationModule,
     MDBBootstrapModule.forRoot()
   ],
   providers: [],
