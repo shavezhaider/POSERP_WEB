@@ -1,14 +1,21 @@
+<notifier-container></notifier-container>
+
 <div class="container my-4">
 <!-- Default form login -->
-<form class="text-center border border-light p-5">
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+<div class="text-center border border-light p-5">
 
   <p class="h4 mb-4">Sign in</p>
 
   <!-- Email -->
-  <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail">
+  <input  id="defaultLoginFormEmail" 
+  class="form-control mb-4" placeholder="User Name" type="text">
 
   <!-- Password -->
-  <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password">
+  <input type="password" id="defaultLoginFormPassword" class="form-control mb-4"
+   placeholder="Password" >
 
   <div class="d-flex justify-content-around">
     <div>
@@ -22,8 +29,10 @@
   </div>
 
   <!-- Sign in button -->
-  <button mdbBtn color="info"  class="my-4" type="submit" (click)="Login()">Sign in</button>
-
+  <button mdbBtn color="info"  class="my-4"  (click)="Login()">Sign in
+    <i class="fa fa-spinner fa-spin" *ngIf="loading"></i>
+  </button>
+  
 
   <!-- Register -->
   <p>Not a member?
@@ -46,6 +55,11 @@
     <mdb-icon fab icon="github"></mdb-icon>
   </a>
 
-</form>
+</div>
 <!-- Default form login -->
+</div>
+</div>
+<div class="col-md-3">
+
+</div>
 </div>
