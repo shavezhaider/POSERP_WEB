@@ -8,10 +8,12 @@ import { AuthenticationRoutingModule } from './authentication-routing.module';
 import {MDBBootstrapModule} from 'angular-bootstrap-md';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { AuthenticationService } from './services/authentication.service';
-import {AdminModule} from '../admin/admin.module'
+import {AdminModule} from '../admin/admin.module';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { UserRegistrationComponent } from './user-registration/user-registration.component'
 
 @NgModule({
-  declarations: [AdminLoginComponent],
+  declarations: [AdminLoginComponent, ForgotpasswordComponent, UserRegistrationComponent],
   imports: [
     CommonModule,    
     FormsModule,
@@ -22,7 +24,7 @@ import {AdminModule} from '../admin/admin.module'
     AdminModule,
     MDBBootstrapModule.forRoot()
   ],
-  exports:[AdminLoginComponent],
+  exports:[AdminLoginComponent,UserRegistrationComponent,ForgotpasswordComponent],
   providers:[AuthenticationService]
   
   
