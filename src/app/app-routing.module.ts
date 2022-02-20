@@ -9,19 +9,7 @@ import { FrontLayoutComponent } from './layouts/admin-layout/front-layout/front-
 import { AdminLoginComponent } from './authentication/admin-login/admin-login.component';
 
 const routes: Routes = [
-  {  
-    path:"admin",
-    component:AdminLayoutComponent,            
-    loadChildren:()=>import('./admin/admin.module').
-    then(mod=>mod.AdminModule)  
-    },
-    
-    {  
-      path:"adminlogin",      
-      loadChildren:()=>import('./authentication/authentication.module').
-      then(mod=>mod.AuthenticationModule)  
-  
-      },
+ 
   {
     
     path:"",
@@ -29,6 +17,20 @@ const routes: Routes = [
     children:[{path:"",component:HomeComponent}]
   },
   
+ 
+   {  
+    path:"admin",
+    component:AdminLayoutComponent,            
+    loadChildren:()=>import('./admin/admin.module').
+    then(mod=>mod.AdminModule)  
+    },
+    
+    {  
+      path:"",      
+      loadChildren:()=>import('./authentication/authentication.module').
+      then(mod=>mod.AuthenticationModule)  
+  
+      },
   
  
   {

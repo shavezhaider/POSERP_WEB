@@ -44,6 +44,14 @@ export class AuthenticationService {
    );
    
   }
+  userRegistration(user:any):Observable<any>
+  {
+    user.Role="SuperAdmin"
+    return this.http.post(this.APIBaseUrl+apiUrl.API_User_Registration_URL,{"appUserEntity":user})
+    .pipe(
+    catchError(error=> this.handleError(error))
+    );
+  }
   // Error handling 
   handleError(error:any) {
     debugger

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {FormGroup,FormControl,Validators} from '@angular/forms'
 import {AuthenticationService} from '../services/authentication.service'
-import { UserAuthRequest } from 'src/app/admin/Shared/interface/request/user-authentication-request';
+
 import {NotifierService } from 'angular-notifier'
 @Component({
   selector: 'app-admin-login',
@@ -12,11 +12,7 @@ export class AdminLoginComponent implements OnInit {
   UserAuthReq:any;
   public loading: boolean;
 
-  // loginForm = new FormGroup({
-  //   UserName: new FormControl('', [Validators.required, Validators.minLength(3)]),
-  //   Password: new FormControl(''),
-    
-  // });
+  
   constructor(private router : Router,private authService:AuthenticationService,
     private notifier:NotifierService
     ) {
@@ -34,6 +30,7 @@ Login()
   this.loading=true;
  
   this.authService.userlogin(this.UserAuthReq).subscribe(data => {
+    debugger
     if(data.IsAuthSuccessful){  
       //Token
       this.notifier.notify('success', data.ErrorMessage);
