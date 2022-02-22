@@ -52,6 +52,24 @@ export class AuthenticationService {
     catchError(error=> this.handleError(error))
     );
   }
+
+  forgotPassword(user:any):Observable<any>
+  {    
+    return this.http.post(this.APIBaseUrl+apiUrl.API_User_Forgot_Password_URL,user)
+    .pipe(
+    catchError(error=> this.handleError(error))
+    );
+  }
+  resetPassword(user:any):Observable<any>
+  {    
+    return this.http.post(this.APIBaseUrl+apiUrl.API_User_Reset_Password_URL,user)
+    .pipe(
+    catchError(error=> this.handleError(error))
+    );
+  }
+
+
+  
   // Error handling 
   handleError(error:any) {
     debugger

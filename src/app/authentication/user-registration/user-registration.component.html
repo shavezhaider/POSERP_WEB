@@ -40,7 +40,21 @@
    <div class="alert alert-danger" *ngIf="f['password'].touched && !f['password'].valid">
     <div *ngIf="f['password'].errors?.['required']">password Name is required</div>
     <div *ngIf="f['password'].errors?.['minLength']">Password must be at least 6 characters</div>
+    <div *ngIf="f['password'].errors?.['hasNumber']"> Must contain at least 1 number!</div>
+    <div *ngIf="f['password'].errors?.['hasCapitalCase']">Must contain at least 1 in Capital Case</div>
+    <div *ngIf="f['password'].errors?.['hasSmallCase']">Must contain at least 1 Letter in Small Case!</div>
   </div>
+  
+  <!-- <label
+  [ngClass]="f['password'].hasError('required') || f['password'].hasError('minlength')  ? 'text-danger' : 'text-success'">
+  <i class="material-icons">
+    {{ f['password'].hasError('required') ||
+    f['password'].hasError('minlength') ? 'cancel' :
+    'check_circle' }}
+  </i>
+  Must be at least 6 characters!
+</label> -->
+
   <!-- Password -->
   <input type="password" formControlName="confirmPassword"  class="form-control mb-4"
    placeholder="Confirm Password"
