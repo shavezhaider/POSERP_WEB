@@ -30,14 +30,25 @@ export class UserRegistrationComponent implements OnInit {
           ]
         ],
         email: ['', [Validators.required, Validators.email]],
-        password: [
-          '',
-          [
-            Validators.required,
-            Validators.minLength(6),
-            Validators.maxLength(20)
-          ]
-        ],
+        
+password:[null, Validators.compose([        
+   Validators.required,
+   Validators.minLength(6),
+   Validators.maxLength(20),
+
+       // 2. check whether the entered password has a number
+       Validation.patternValidator(/\d/, { hasNumber: true }),
+       // 3. check whether the entered password has upper case letter
+       Validation.patternValidator(/[A-Z]/, { hasCapitalCase: true }),
+       // 4. check whether the entered password has a lower-case letter
+       Validation.patternValidator(/[a-z]/, { hasSmallCase: true }),
+      
+
+  
+  ])
+],
+
+
         confirmPassword: ['', Validators.required]
         // acceptTerms: [false, Validators.requiredTrue]
       },
