@@ -9,7 +9,7 @@ const routes: Routes = [
   {path:'adminlogin', component:AdminLoginComponent},
   {path:'forgotpassword',component:ForgotpasswordComponent},
   {path:'registration',component:UserRegistrationComponent},
-  {path:'resetpassword',component:ResetPasswordComponent}
+  {path:'resetpassword/:code/:email',component:ResetPasswordComponent}
 
 ];
 
